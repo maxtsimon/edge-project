@@ -12,20 +12,11 @@ import time
 
 import os
 
-# https://www.youtube.com/watch?v=eq3vD93GgLs
-# https://www.youtube.com/watch?v=Aw2qISZgA3c
-
-
-# https://www.youtube.com/watch?v=-K8ZDhaPXpg
 
 def main():
     
     cap = cv2.VideoCapture(0)
 
-    # dog example
-    # model = YOLO("yolov8n.pt")
-
-    # comment out model declaration below for dog example
     model = YOLO("yolov8s.pt")
 
     box_annotator = sv.BoundingBoxAnnotator()
@@ -33,7 +24,7 @@ def main():
 
     confidence_threshold = 0.65
 
-    detection_time = None  # Initialize variable to store detection time
+    detection_time = None  
 
     while True:
             ret, frame = cap.read()
@@ -48,17 +39,14 @@ def main():
 
             for class_id, confidence in zip(detections.class_id, detections.confidence):
                 
-                # dog example
-                # if confidence >= confidence_threshold and class_id == 16:
-
-                # comment out if statment below for dog example
                 if confidence >= confidence_threshold and class_id == 2:
 
-                    if detection_time is None:  # Record detection time only once
+                    if detection_time is None: 
                         detection_time = time.time()
 
-                    # pyautogui.hotkey('alt', 'f4')
+                    # comment out the second os line if using Windows, comment out the first os line if using Mac
                     os.system("taskkill /im chrome.exe /f")
+                    # os.system("killall -9 'Google Chrome'")
                     webbrowser.open("https://www.youtube.com/watch?v=UpgM_8_2Hus")
                     return detection_time
 
