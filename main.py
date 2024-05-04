@@ -4,8 +4,6 @@ from ultralytics import YOLO
 
 import supervision as sv
 
-import pyautogui
-
 import webbrowser
 
 import time
