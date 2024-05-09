@@ -57,6 +57,8 @@ def main():
             if (cv2.waitKey(30) == 27):
                 break
 
+    return detection_time
+
 if __name__ == "__main__":
     detection_time = main()
     if detection_time is not None:
