@@ -13,7 +13,8 @@ pip install opencv-python
 - A Webcam
 
 # Usage
-1. Once all of the required libraries are installed, download main.py as well as the pre-trained yolov8s.pt model from this repo
+1. Once all of the required libraries are installed, download main.py as well as the pre-trained yolov8s.pt model from this repo and put them in the same directory
 2. Run main.py
 3. Open up YouTube in a Google Chrome browser window and point the webcam at the screen
 4. Enjoy watching YouTube with peace of mind that the program will prevent users from seeing any gun-related content
+5. Hit the escape key with the CV2 window (webcam footage) open to terminate the program
